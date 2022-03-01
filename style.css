@@ -1,0 +1,79 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* general styles  */
+:root{
+    --mainColor: hsl(229deg 39% 14%);
+    --secondaryColor: #fff;
+    --btnColor: hsl(267deg 99% 59%);  
+} 
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--mainColor);
+    color: var(--secondaryColor);
+}
+
+ul{
+    list-style-type: none ;
+}
+
+
+
+/* start header styles  */
+h1{
+    text-align: center;
+    padding: 8px;
+    position: relative;
+}
+h1::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;  
+    transform: translate(-50%,-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--btnColor);
+}
+
+
+/* start main styles  */
+
+main {
+    text-align: center;
+}
+
+.main-title{
+   font-size: 1.4em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+
+}
+
+main form{
+    margin-top: 20px;
+}
+
+main form .todo-input{
+    font-size: 1.1em;
+    background-color: var(--mainColor);
+    color:white ;
+    border: 1px solid var(--btnColor);
+    padding: 8px;
+    border-radius: 5px;
+}
+main form .todo-add-btn{
+    font-size: 1.1em;
+    background-color: var(--btnColor);
+    color: var(--secondaryColor);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 2px;
+}
