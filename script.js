@@ -8,16 +8,16 @@ todoAdd.addEventListener('click',addNewTodo);
 // create list item function : 
 function createLi(value){
     let newTodo = document.createElement('li');
-    newTodo.textContent = value ;
+    newTodo.innerHTML = 
+    `
+      <p>${value}</p>
+      <div class="icons"> 
+            <i class="fa-solid fa-circle-xmark delete-icon" title="delete" ></i>
+            <i class="fa-solid fa-pen-to-square edit-icon" title="edit" ></i>
+      </div>
+    ` ;
     todoList.appendChild(newTodo);
     newTodo.classList.add('new-todo');
-    newTodo.innerHTML += 
-    `
-    <div class="icons"> 
-        <i class="fa-solid fa-circle-xmark" title="delete" class="delete-icon"></i>
-        <i class="fa-solid fa-pen-to-square"title="edit" class="edit-icon"></i>
-    </div>
-    `
 }
 
 function addNewTodo(event){
@@ -61,3 +61,32 @@ function resetTodo(){
         createLi(allTodo[i]);
     }
 }
+
+// Delete function 
+document.addEventListener('click',function(e){
+    let clickedItem = e.target;
+
+    if(clickedItem.className.includes('delete-icon')){
+
+        let iconsDiv = clickedItem.parentElement ;
+        let ListItem = iconsDiv.parentElement;
+     
+         
+        let allTodo = [];
+        if(localStorage.getItem('allTodo')){
+             allTodo = JSON.parse(localStorage.getItem('allTodo'));
+        } 
+        let textLi = ListItem.innerText.trimEnd();
+        let IndexOfDeleteIcon = allTodo.indexOf(textLi);
+        
+        // Delete Element form the array 
+        allTodo.splice(IndexOfDeleteIcon,1);
+        localStorage.setItem('allTodo',JSON.stringify(allTodo));
+
+
+        // Delete Element form the page 
+        ListItem.remove();
+  
+    }   
+})
+
