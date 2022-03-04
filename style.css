@@ -8,15 +8,23 @@
     --btnColor: hsl(267deg 99% 59%);  
     --listItemColor: hsl(203deg 99% 54%);
 } 
+.light{
+    --mainColor: #F8E5E5;
+    --secondaryColor: #FA255E;
+    --btnColor: #000000;  
+    --listItemColor: hsl(203deg 99% 54%);
+}
 *{
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    word-break: break-all;
 }
 body{
     font-family: 'Cairo', sans-serif;
     background-color: var(--mainColor);
     color: var(--secondaryColor);
+    transition: 0.5s ease-in-out;
 }
 
 ul{
@@ -42,6 +50,15 @@ h1::after{
     height: 2px;
     background-color: var(--btnColor);
 }
+header .mode{
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    right: 10px;
+    top: 10px;
+    transform: rotate(-25deg);
+    color: var(--secondaryColor);
+}
 
 
 /* start main styles  */
@@ -64,7 +81,7 @@ main form{
 main form .todo-input{
     font-size: 1.1em;
     background-color: var(--mainColor);
-    color:white ;
+    color:var(--secondaryColor) ;
     border: 1px solid var(--btnColor);
     padding: 8px;
     border-radius: 5px;
@@ -86,7 +103,7 @@ main form .todo-add-btn{
 }
 .new-todo{
     background-color:  var(--listItemColor) ; 
-    color: var(--secondaryColor);
+    color: white;
     width: 70%; 
     margin: 20px auto;
     text-align: left;
@@ -132,7 +149,7 @@ main form .todo-add-btn{
     font-size: 1.1em;
     background-color: var(--listItemColor); 
     color:white ;
-    border: 1px solid var(--secondaryColor);
+    border: 1px solid white;
     padding: 5px;
     border-radius: 5px;
 }
@@ -140,7 +157,7 @@ main form .todo-add-btn{
     background-color: var(--listItemColor);
     padding: 5px;
     color: white;
-    border: 1px solid var(--secondaryColor);
+    border: 1px solid white;
     font-size: 1.1em;
     border-radius: 5px;
 }

@@ -166,3 +166,37 @@ function EditValue(me){
 
 }
 
+// add light mode 
+let lightIcon = document.querySelector('.mode');
+let body = document.body;
+
+lightIcon.addEventListener('click',setThemeOn);
+
+function changeTheme(){
+    body.classList.toggle('light');
+}
+
+
+function setThemeOn(){
+    let light ;
+    if(localStorage.getItem('light')){
+        light = localStorage.getItem('light');
+    }
+   
+    if(light != "On"){
+       localStorage.setItem('light','On');
+       changeTheme();
+    }else{
+        localStorage.setItem('light','Off');
+        changeTheme();
+    }
+}
+
+let light = localStorage.getItem('light');
+
+if(light == 'On'){
+    changeTheme();
+}
+
+
+
