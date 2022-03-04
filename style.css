@@ -6,6 +6,7 @@
     --mainColor: hsl(229deg 39% 14%);
     --secondaryColor: #fff;
     --btnColor: hsl(267deg 99% 59%);  
+    --listItemColor: hsl(203deg 99% 54%);
 } 
 *{
     padding: 0%;
@@ -84,7 +85,7 @@ main form .todo-add-btn{
     margin-top: 40px;
 }
 .new-todo{
-    background-color:  hsl(203deg 99% 54%) ; 
+    background-color:  var(--listItemColor) ; 
     color: var(--secondaryColor);
     width: 70%; 
     margin: 20px auto;
@@ -115,5 +116,43 @@ main form .todo-add-btn{
     }
     .new-todo .icons{
         width: auto;
+    }
+}
+/* .card{
+    display: flex;
+    justify-content: space-between;
+} */
+ .card{
+
+     width: 80%;
+ }
+
+.card .edited-input{
+    width: 60%;
+    font-size: 1.1em;
+    background-color: var(--listItemColor); 
+    color:white ;
+    border: 1px solid var(--secondaryColor);
+    padding: 5px;
+    border-radius: 5px;
+}
+.card .todoEdit{
+    background-color: var(--listItemColor);
+    padding: 5px;
+    color: white;
+    border: 1px solid var(--secondaryColor);
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+@media (max-width: 600px) {
+    .card .edited-input{
+        width: 80%;
+    }
+    .card .todoEdit{
+        display: block;
+        width: auto;
+        margin: auto;
+        margin-top: 8px;
+        margin-bottom: 8px;
     }
 }
